@@ -9,5 +9,5 @@ const game = new Game();
 const view = document.getElementById("ttt");
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Your code here
+
 });

@@ -15,8 +15,7 @@ class View {
         coords.push(i);
         coords.push(j);
         const square = document.createElement('li')
-        //
-        // <li data-index-number=`${coords}` id="square"></li>
+        square.dataset.dataIndexNumber = `${coords}`
         board.appendChild(square);
       }
     }
@@ -27,16 +26,16 @@ class View {
   handleClick(e) {
     const position = querySelector("li:hover");
     let ele = e.target;
-    //
     const pos = position.data-index-number;
-    Game.playMove(pos);
+    ele.addEventListener("click", makeMove(pos))
+    // Game.playMove(pos);
     ele.classList.add("e.team");
 
   }
 
   makeMove(square) {
-    
-   this.handleGameOver()
+    this.handleClick(e)
+    this.handleGameOver()
   }
   
   handleGameOver() {
